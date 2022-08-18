@@ -1,0 +1,964 @@
+@font-face {
+  font-family: 'vacations';
+  src: url('../src/fonts/vacations_in_paradise_personal_use-webfont.woff')
+      format('woff'),
+    url('../src/fonts/vacations_in_paradise_personal_use-webfont.woff2')
+      format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ralewayextralight';
+  src: url('../src/fonts/raleway-extralight-webfont.woff2') format('woff2'),
+    url('../src/fonts/raleway-extralight-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ralewaylight';
+  src: url('../src/fonts/raleway-light-webfont.woff2') format('woff2'),
+    url('../src/fonts/raleway-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ralewaymedium';
+  src: url('../src/fonts/raleway-medium-webfont.woff2') format('woff2'),
+    url('../src/fonts/raleway-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ralewayregular';
+  src: url('../src/fonts/raleway-regular-webfont.woff2') format('woff2'),
+    url('../src/fonts/raleway-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+/* -------------------------------------------------GLOBAL STYLES-------------------------------------------------- */
+.container {
+  margin-top: 1rem;
+}
+h1 {
+  font-size: 1.5rem;
+  font-family: 'vacations', arial;
+  padding-bottom: 1rem;
+  color: #193c40;
+}
+h2 {
+  font-size: 1.2rem;
+  font-family: 'ralewaymedium', arial;
+}
+h3 {
+  font-size: 1rem;
+  font-family: 'ralewayregular', arial;
+}
+p {
+  font-family: 'ralewaymedium', arial;
+  color: #1d1d1d;
+}
+a {
+  text-decoration: none;
+  color: #1d1d1d;
+}
+.input-group-text {
+  background-color: #343a40;
+}
+
+.button {
+  background-color: #343a40;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-family: 'ralewaymedium', arial;
+  padding: 0.4rem 1.3rem;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #ff8400;
+}
+.button:active {
+  background-color: #193c40 !important;
+}
+.validation-error {
+  color: #c02626;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 0.9rem;
+  background-color: #e6643042;
+}
+.error-h2 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.error-text {
+  padding-bottom: 1rem;
+}
+.error-imagecontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.error-imagecontainer__image {
+  border-radius: 1%;
+}
+.error-imagecontainer__text {
+  padding-top: 2px;
+  text-align: center;
+  font-size: 11px;
+}
+.autocomplete-dropdown__menu {
+  background-color: #ffffff;
+  width: 100%;
+}
+#dropdown-basic,
+button {
+  background-color: #fff7f0;
+  border-color: #fff7f0;
+  margin: 0px;
+  padding: 0px;
+}
+.searchbar-placeholder {
+  background-color: #ffffff;
+}
+.searchbar-placeholder::placeholder {
+  color: #ff8400;
+}
+.admin-warning {
+  font-size: 1.1rem;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #c026263d;
+  color: #c02626;
+}
+/* ---------------------------------------------------NAVBAR------------------------------------------------------ */
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+}
+.navbar .container {
+  margin: 0;
+}
+.navbar i {
+  font-size: 1.5rem;
+}
+.navbar a {
+  color: #000000;
+  padding-right: 1rem;
+  font-family: 'ralewaylight', arial;
+  letter-spacing: -2px;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+.navbar-menu__text-font {
+  padding-left: 5px;
+}
+nav a.selected {
+  color: #ff8400;
+}
+.navbar a:hover {
+  color: #ff8400;
+  padding-right: 1rem;
+  text-decoration: none;
+}
+.navbar button:hover {
+  color: #ff8400;
+}
+.navbar a:active {
+  color: #193c40;
+  padding-right: 1rem;
+  text-decoration: none;
+}
+.navbar button:active {
+  color: #193c40;
+}
+
+.logout-button,
+.admin-button,
+.login-button {
+  background-color: #ffffff;
+  font-family: 'ralewaymedium', arial;
+  text-transform: uppercase;
+  border: none;
+  font-size: 0.8rem;
+  color: #000000;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.admin-button {
+  display: flex;
+  align-items: baseline;
+}
+.navbar .logout-icon:hover {
+  color: #ff8400;
+}
+/* ---------------------------------------------------MAIN------------------------------------------------------- */
+main {
+  border-top: solid #ff8400 2px;
+  min-height: 100vh;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-image: url('./images/background-main.jpg');
+  background-position: center;
+  background-repeat: repeat;
+}
+/* -----------------------------------------------------FOOTER-------------------------------------------------- */
+.footer {
+  background-color: #193c40;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-height: 100px;
+}
+.footer-icons__facebook {
+  font-size: 2rem;
+  color: #ffffff;
+}
+.footer-icons__twitter {
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+}
+.footer-icons__pinterest {
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+}
+.footer-icons__instagram {
+  font-size: 2rem;
+  color: #ffffff;
+}
+.footer i:hover {
+  color: #ff8400;
+  list-style-type: none;
+}
+.footer-icons {
+  padding-top: 1rem;
+  flex-direction: row;
+}
+.footer-copyright__text {
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+}
+/* -------------------------------------------------HOMEPAGE------------------------------------------------------ */
+.homepage-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.homepage-imagecontainer {
+  position: relative;
+  width: 100%;
+}
+.homepage-imagecontainer__image {
+  height: auto;
+  width: 100%;
+  border-radius: 5px;
+}
+.homepage-imagecontainer__button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #ff8400;
+  font-family: 'ralewaymedium', arial;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  padding: 1.2rem;
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.homepage-imagecontainer__button:hover {
+  background-color: #193c40;
+}
+.enquire-container__heading-one {
+  padding-top: 1rem;
+}
+.enquire-container__heading-two {
+  padding: 5px 0 5px 0;
+}
+.enquire-container__button {
+  background-color: #ff8400;
+  font-family: 'ralewaymedium', arial;
+  text-transform: uppercase;
+  border: none;
+  font-size: 0.8rem;
+  padding: 0.4rem 1.3rem;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.enquire-container__button:hover {
+  background-color: #193c40;
+}
+.enquire-container__heading-two {
+  font-family: 'ralewaylight', arial;
+  font-size: 1rem;
+}
+.image-carousel {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  width: 100%;
+}
+.image-carousel__heading-icon {
+  margin-left: 5px;
+}
+.image-carousel__heading {
+  display: flex;
+  justify-content: baseline;
+  padding-bottom: 8px;
+}
+.carousel-caption__container-heading {
+  padding-top: 4px;
+  font-weight: bold;
+  color: #ff8400;
+}
+.carousel-caption__container-text {
+  color: #000000;
+  padding-bottom: 4px;
+}
+.image-carousel__container-item {
+  background-color: #ff84003a;
+  border-radius: 5px;
+  text-align: center;
+}
+ol.carousel-indicators li.active {
+  background-color: #ff8400;
+}
+.carousel-caption__container {
+  background-color: #ffffffc7;
+}
+/* -------------------------------------------------ACCOMMODATIONSPAGE------------------------------------------------------ */
+.accommodations-searchbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.accommodations-empty {
+  font-family: 'ralewaythin', arial;
+  text-transform: uppercase;
+}
+.accommodations-empty__warning {
+  font-size: 1.1rem;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #c026263d;
+  color: #c02626;
+}
+.loading-container__warning {
+  font-size: 1.1rem;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #c026263d;
+  color: #c02626;
+}
+.accommodations-container__image {
+  width: 41%;
+  max-height: 250px;
+}
+.accommodation-container__carousel-image {
+  width: 100%;
+  padding-bottom: 1rem;
+}
+.accommodation-container__heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.accommodations-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+.accommodations-container a {
+  text-decoration: none;
+  color: inherit;
+}
+.accommodations-container__card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.accommodations-container__card:hover {
+  background-color: #ff840023;
+}
+.accommodations-container__body {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  border-radius: 2%;
+}
+.accommodations-container__posts {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+}
+.accommodations-container__posts-title {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-family: 'ralewaythin', arial;
+  color: #ff8400;
+}
+.accommodations-container__posts-info {
+  font-family: 'ralewaythin', arial;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.accommodation-container__posts {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+}
+.accommodation-container__posts-title {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-family: 'ralewaythin', arial;
+  color: #ff8400;
+}
+.accommodation-container__posts-info {
+  font-family: 'ralewaythin', arial;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.accommodations-container__posts-infoextra {
+  color: #193c40;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+}
+.loading-container {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-family: 'ralewaythin', arial;
+  color: #ff8400;
+}
+.accommodation-container__posts-button {
+  background-color: #193c40;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-family: 'ralewaymedium', arial;
+  padding: 0.7rem 1.7rem;
+  cursor: pointer;
+}
+.accommodation-container__posts-button:hover {
+  background-color: #ff8400;
+}
+.back-button {
+  background-color: #193c40;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-family: 'ralewaymedium', arial;
+  padding: 0.4rem 1.3rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+.back-button:hover {
+  background-color: #ff8400;
+}
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+/* -------------------------------------------------CONTACTPAGE------------------------------------------------------ */
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+/* -------------------------------------------------LOGINPAGE------------------------------------------------------ */
+.login-form__login {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-family: 'ralewaythin', arial;
+}
+.login-form__login-button {
+  background-color: #ff8400;
+}
+.login-form__login-button:hover {
+  background-color: #343a40;
+}
+.login-form__login-button:active {
+  background-color: #193c40;
+}
+
+/* --------------------------------------------------ADMINPAGE----------------------------------------------- */
+.adminpage-home {
+  display: flex;
+  justify-content: space-around;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.adminpage-home a {
+  text-decoration: none;
+}
+.adminpage-home__link-text {
+  color: #000000;
+}
+.adminpage-home__link-text:hover {
+  color: #ff8400;
+}
+.adminpage-home a.active {
+  color: #ff8400;
+}
+.adminpage-imagecontainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 35%;
+}
+.adminpage-imagecontainer__image {
+  width: 60%;
+}
+.adminpage-searchbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+/* --------------------------------------------------BOOKINGSPAGE----------------------------------------------- */
+.booking-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.booking-card__card {
+  display: flex;
+  flex-direction: column;
+  width: 333px;
+  margin: 20px 0px 20px 0px;
+  padding: 1rem;
+  border: solid 1px #494949;
+  border-radius: 2%;
+}
+.booking-card a {
+  text-decoration: none;
+}
+.booking-card__card:hover {
+  background-color: #dadada;
+  color: #000000;
+}
+.booking-card__info {
+  font-family: 'ralewaythin', arial;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.booking-card__info-date {
+  font-family: 'ralewaythin', arial;
+  font-size: 0.7rem;
+}
+.booking-card__info-datespan {
+  font-family: 'ralewaythin', arial;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+/* --------------------------------------------------MAILPAGE----------------------------------------------- */
+.contact-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.contact-card__card {
+  display: flex;
+  flex-direction: column;
+  width: 333px;
+  margin: 20px 0px 20px 0px;
+  padding: 1rem;
+  border: solid 1px #494949;
+  border-radius: 2%;
+}
+.contact-card a {
+  text-decoration: none;
+}
+.contact-card__card:hover {
+  background-color: #dadada;
+  color: #000000;
+}
+.contact-card__info {
+  font-family: 'ralewaythin', arial;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.contact-card__info-date {
+  font-family: 'ralewaythin', arial;
+  font-size: 0.7rem;
+}
+.contact-card__info-datespan {
+  font-family: 'ralewaythin', arial;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+/* --------------------------------------------------ENQUIRYPAGE----------------------------------------------- */
+.enquiry-container__submit {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-family: 'ralewaythin', arial;
+  color: #ff8400;
+}
+.enquiry-container__submit-button {
+  background-color: #ff8400;
+}
+.enquiry-container__submit-button:hover {
+  background-color: #193c40;
+}
+.enquiry-container__button-container {
+  display: flex;
+  flex-direction: row;
+}
+.enquiry-container__submit-spinner {
+  color: #ff8400;
+  font-size: 1rem;
+}
+.enquiry-container__submit-complete {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-family: 'ralewaythin', arial;
+  color: #193c40;
+  padding-top: 0.5rem;
+  padding-left: 1rem;
+}
+.enquiry-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.enquiry-card__card {
+  display: flex;
+  flex-direction: column;
+  width: 333px;
+  margin: 20px 0px 20px 0px;
+  padding: 1rem;
+  border: solid 1px #494949;
+  border-radius: 2%;
+}
+.enquiry-card a {
+  text-decoration: none;
+}
+.enquiry-card__card:hover {
+  background-color: #dadada;
+  color: #000000;
+}
+.enquiry-card__info {
+  font-family: 'ralewaythin', arial;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.enquiry-card__info-date {
+  font-family: 'ralewaythin', arial;
+  font-size: 0.7rem;
+}
+.enquiry-card__info-datespan {
+  font-family: 'ralewaythin', arial;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+/* -------------------------------------------------POSTSPAGE------------------------------------------------ */
+.admin-post__heading {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+}
+.admin-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.admin-card__card {
+  display: flex;
+  flex-direction: column;
+  width: 333px;
+  margin: 20px 0px 20px 0px;
+  padding: 0.5rem;
+  border: solid 1px #494949;
+  border-radius: 2%;
+}
+.admin-card a {
+  text-decoration: none;
+}
+.admin-card__image {
+  width: 100%;
+  padding-bottom: 1rem;
+}
+.admin-card__card:hover {
+  background-color: #dadada;
+  color: #000000;
+}
+.admin-card__title {
+  font-family: 'ralewaymedium', arial;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+.admin-card__info {
+  font-family: 'ralewaymedium', arial;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.admin-home {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+}
+.admin-home a {
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-family: 'ralewaythin', arial;
+  text-decoration: none;
+}
+.adminsearch-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.admin-home a:hover {
+  color: #ff8400;
+}
+.admin-home a:active {
+  color: #193c40;
+}
+.spinner {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-family: 'ralewaythin', arial;
+  color: #ff8400;
+}
+
+.adminsearch-container__button {
+  background-color: #ff8400;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-family: 'ralewaymedium', arial;
+  padding: 0.4rem 1.3rem;
+  cursor: pointer;
+}
+.adminsearch-container__button:hover {
+  background-color: #193c40;
+}
+.adminsearch-container__button a {
+  color: white;
+  text-decoration: none;
+}
+.postlist-empty {
+  font-family: 'ralewaythin', arial;
+  text-transform: uppercase;
+}
+.postlist-empty__warning {
+  font-size: 1.1rem;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #c026263d;
+  color: #c02626;
+}
+/* -------------------------------------------------ADDPOSTPAGE------------------------------------------------------ */
+.add-post__submit {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-family: 'ralewaythin', arial;
+  font-weight: bold;
+  color: #ff8400;
+}
+.postsmedia-dropdown__empty {
+  font-family: 'ralewaythin', arial;
+  text-transform: uppercase;
+  text-align: center;
+}
+.postsmedia-dropdown__empty-warning {
+  font-size: 1.1rem;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #c026263d;
+  color: #c02626;
+}
+/* -------------------------------------------------EDITPOSTPAGE------------------------------------------------------ */
+.update-container {
+  display: flex;
+  align-items: baseline;
+}
+.update-container__success {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: 'ralewaythin', arial;
+  padding: 1rem 1rem 1rem 0rem;
+}
+.update-container__success-icon {
+  color: #2ea82e;
+  font-size: 1.7rem;
+  padding-left: 5px;
+}
+.update-button__group {
+  padding-top: 1rem;
+  font-family: 'ralewaythin', arial;
+}
+.delete-button {
+  padding: 0.7rem 1.3rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+.update-button__group-button {
+  padding: 0.7rem 1.3rem;
+  background-color: #193c40;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+.update-button__group-button:hover {
+  background-color: #193c40c5;
+}
+
+@media only screen and (max-width: 500px) {
+  /* -----------------------------------------------------NAVBAR-------------------------------------------------- */
+  .logo {
+    padding: 1rem;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+  }
+  .navbar-menu__text {
+    display: flex;
+    flex-direction: column;
+  }
+  .navbar-menu__admin {
+    display: flex;
+    flex-direction: column;
+  }
+  .navbar-left {
+    display: none;
+  }
+  .navbar-right {
+    display: none;
+  }
+  /* -----------------------------------------------------HOMEPAGE-------------------------------------------------- */
+  .homepage-imagecontainer__button {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+  /* -------------------------------------------------ACCOMMODATIONSPAGE------------------------------------------------------ */
+  .accommodations-container__card {
+    display: flex;
+    margin-bottom: 1rem;
+  }
+  .accommodations-container__body {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    border-radius: 2%;
+  }
+  .accommodations-container__image {
+    width: 100%;
+    padding: 0.5rem;
+  }
+  .accommodation-container__heading {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .accommodations-container__posts-infoextra {
+    display: none;
+  }
+  .accommodations-searchbar {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+  }
+  /* --------------------------------------------------ADMINPAGE----------------------------------------------- */
+  .adminpage-home {
+    display: flex;
+    flex-direction: column;
+  }
+  .adminpage-home__link {
+    display: flex;
+    justify-content: center;
+  }
+  .admin-card a {
+    text-decoration: none;
+    text-align: center;
+  }
+  .adminpage-imagecontainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 50%;
+  }
+  .adminpage-imagecontainer__image {
+    width: 80%;
+  }
+  .adminsearch-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .adminsearch-container__searchbar {
+    width: 100%;
+  }
+  .adminsearch-container__button {
+    background-color: #ff8400;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-family: 'ralewaymedium', arial;
+    padding: 0.4rem 1.3rem;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+  .admin-card__info {
+    font-family: 'ralewaymedium', arial;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  .admin-card__card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 20px 0px 20px 0px;
+    padding: 0.5rem;
+    border: solid 1px #494949;
+    border-radius: 2%;
+  }
+  /* -----------------------------------------------------FOOTER-------------------------------------------------- */
+  .footer {
+    display: flex;
+    justify-content: center;
+  }
+  .footer-left {
+    display: none;
+  }
+  .footer-right {
+    display: none;
+  }
+}
